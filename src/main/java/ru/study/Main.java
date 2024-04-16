@@ -20,7 +20,7 @@ public class Main {
         //employeeManagementController.createNewEmployee(employeeBob);
         //employeeManagementController.createNewEmployee(employeeJohn);
         //employeeManagementController.createNewEmployee(employeeLena);
-
+        System.out.println(employeeManagementController.findAllChangeLogs());
         System.out.println(employeeManagementController.findAllEmployees());
     }
 }

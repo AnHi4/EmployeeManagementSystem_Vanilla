@@ -6,17 +6,16 @@ import lombok.NonNull;
 import lombok.ToString;
 
 import java.time.Instant;
+import java.time.LocalDate;
 
 @Data
 @Builder
 @ToString
+@NonNull
 public class ChangeLog {
-    @NonNull
-    private long id;
-    @NonNull
-    private long employeeId;
-    @NonNull
-    private Instant createdAt;
-    @NonNull
+    private long changeLog_id;
+    private long employee_id;
     private String comment;
+    private LocalDate createdAt;
+
 }

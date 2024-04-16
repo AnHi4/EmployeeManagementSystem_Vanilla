@@ -1,14 +1,15 @@
 package ru.study.model.param;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 @Getter
 @Setter
 @AllArgsConstructor
+@NonNull
+
+//@Builder??
 public class CreateNewEmployeeParam {
         private String firstName;
         private String lastName;

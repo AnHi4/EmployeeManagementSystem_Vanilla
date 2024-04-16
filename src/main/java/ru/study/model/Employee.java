@@ -8,10 +8,11 @@ import java.time.LocalDate;
 @Data
 @Builder
 @ToString
+@NonNull
 public class Employee {
-    @NonNull
-    private long id;
-    @NonNull
+
+    private long employee_id;
+
     private boolean isActive;
     @NonNull
     private String firstName;
@@ -24,6 +25,9 @@ public class Employee {
     private String currency;
     @NonNull
     private String email;
+    //получить пиздюлей за ноннуллы
+    //ноннулы нужны, потому что какой смысл хранить полупустые поля в бд про сотрудников - в этом ведь нет смысла
+    //however...
     @NonNull
     private String gender;
     @NonNull

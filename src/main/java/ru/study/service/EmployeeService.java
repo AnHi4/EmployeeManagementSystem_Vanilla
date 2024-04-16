@@ -2,6 +2,7 @@ package ru.study.service;
 
 import ru.study.connection_utils.ConnectionHelper;
 import ru.study.model.Employee;
+import ru.study.model.param.CreateNewChangeLogParam;
 import ru.study.model.param.CreateNewEmployeeParam;
 
 import java.math.BigDecimal;
@@ -14,30 +15,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class EmployeeService {
-    public static void createNewEmployee(CreateNewEmployeeParam createNewEmployeeParam){
-        String insQuery =
-                "INSERT INTO employee (status, firstName, lastName, fathersName, " +
-                        "salary, currency, email, gender, birthday, hireDate) " +
-                        "VALUES (?,?,?,?,?,?,?,?,?,?)";
 
-        try (PreparedStatement prSt = ConnectionHelper.createConnection().prepareStatement(insQuery)) {
-            prSt.setBoolean(1, true);
-            prSt.setString(2, createNewEmployeeParam.getFirstName());
-            prSt.setString(3, createNewEmployeeParam.getLastName());
-            prSt.setString(4, createNewEmployeeParam.getFathersName());
-            prSt.setBigDecimal(5, createNewEmployeeParam.getSalary());
-            prSt.setString(6, createNewEmployeeParam.getCurrency());
-            prSt.setString(7, createNewEmployeeParam.getEmail());
-            prSt.setString(8, createNewEmployeeParam.getGender());
-            prSt.setDate(9, Date.valueOf(createNewEmployeeParam.getBirthday()));
-            prSt.setDate(10, Date.valueOf(createNewEmployeeParam.getHireDate()));
-
-            prSt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
+    //этот метод вкорячить в репу
+    //при запуске проги этот метод сразу отрабатывает и пихает все объекты в коллекцию
     public static List<Employee> getEmployeeDB(){
 
         List<Employee> employeeList = new LinkedList<>();
@@ -63,11 +43,12 @@ public class EmployeeService {
                 LocalDate fireDate;
                 if (rs.getDate("fireDate") == null){
                     fireDate = null;
+                    //ещё раз для тупого про элс :с
                 } else {
                     fireDate = rs.getDate("fireDate").toLocalDate();
                 }
                 Employee tempEmployee = Employee.builder()
-                        .id(employee_id)
+                        .employee_id(employee_id)
                         .isActive(isActive)
                         .firstName(firstName)
                         .lastName(lastName)
@@ -88,5 +69,45 @@ public class EmployeeService {
         }
 
         return employeeList;
+    }
+
+    //по той же логике создание должно происходить так:
+    //в коллекцию вносится объект, а после в бд
+    // можно что-то заумное придумать по типу: бд ёх, но данные есть в проге
+    //и в случае чего потом внесется в бд
+    //но это ема ещё придумать что-то надо
+
+    public static void createNewEmployee(CreateNewEmployeeParam createNewEmployeeParam){
+        String insQuery =
+                "INSERT INTO employee (status, firstName, lastName, fathersName, " +
+                        "salary, currency, email, gender, birthday, hireDate) " +
+                        "VALUES (?,?,?,?,?,?,?,?,?,?)";
+
+        try (PreparedStatement prSt = ConnectionHelper.createConnection().prepareStatement(insQuery)) {
+            prSt.setBoolean(1, true);
+            prSt.setString(2, createNewEmployeeParam.getFirstName());
+            prSt.setString(3, createNewEmployeeParam.getLastName());
+            prSt.setString(4, createNewEmployeeParam.getFathersName());
+            prSt.setBigDecimal(5, createNewEmployeeParam.getSalary());
+            prSt.setString(6, createNewEmployeeParam.getCurrency());
+            prSt.setString(7, createNewEmployeeParam.getEmail());
+            prSt.setString(8, createNewEmployeeParam.getGender());
+            prSt.setDate(9, Date.valueOf(createNewEmployeeParam.getBirthday()));
+            prSt.setDate(10, Date.valueOf(createNewEmployeeParam.getHireDate()));
+
+
+            prSt.executeUpdate();
+            //а вот тут как раз вопрос, если моя мысли верны, то айдишник эмплоии можно взять из проги
+            //если нет, то из бд
+
+
+            //метод для теста ёбана
+            CreateNewChangeLogParam createNewChangeLogParam;
+            createNewChangeLogParam = new CreateNewChangeLogParam(12,"hired at", createNewEmployeeParam.getHireDate());
+            ChangeLogService.createNewChangeLog(createNewChangeLogParam);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }
