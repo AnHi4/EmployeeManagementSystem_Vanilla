@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ba2f2c5-7edc-4e67-812a-826de1a24116" name="Changes" comment="Employee Management System without Spring framework">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/study/model/param/CreateNewChangeLogParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/study/model/param/ChangeEmployeeParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/study/model/param/FireEmployeeParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/controller/EmployeeManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/controller/EmployeeManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/model/ChangeLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/model/ChangeLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/model/param/CreateNewEmployeeParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/model/param/CreateNewEmployeeParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/model/param/CreateNewChangeLogParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/model/param/CreateChangeLogParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/model/param/CreateNewEmployeeParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/model/param/CreateEmployeeParam.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/repository/ChangeLogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/repository/ChangeLogRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/repository/EmployeeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/study/service/ChangeLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/study/service/ChangeLogService.java" afterDir="false" />
@@ -54,6 +56,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -68,10 +73,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/IdeaProjects/EmployeeMananagementSystem_Spring"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/IdeaProjects/NewFXProject",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Language Defaults"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.study.Main" />
       <module name="EmployeeManagementSystem_Vanilla.main" />
@@ -85,8 +95,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EmployeeManagementSystem_Vanilla [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="EmployeeManagementSystem_Vanilla [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.EmployeeManagementSystem_Vanilla [clean]" />
+        <item itemvalue="Gradle.EmployeeManagementSystem_Vanilla [build]" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -116,11 +172,34 @@
       <option name="project" value="LOCAL" />
       <updated>1712872054424</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Employee Management System without Spring framework">
+      <option name="closed" value="true" />
+      <created>1713264856312</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713264856312</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Employee Management System without Spring framework" />
     <option name="LAST_COMMIT_MESSAGE" value="Employee Management System without Spring framework" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

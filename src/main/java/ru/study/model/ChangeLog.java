@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NonNull;
 import lombok.ToString;
 
-import java.time.Instant;
 import java.time.LocalDate;
 
 @Data
@@ -13,9 +12,9 @@ import java.time.LocalDate;
 @ToString
 @NonNull
 public class ChangeLog {
-    private long changeLog_id;
-    private long employee_id;
+    private long id;
+    private long employeeId;
     private String comment;
     private LocalDate createdAt;
-
+    // private OffsetDateTime
 }

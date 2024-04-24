@@ -7,10 +7,8 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @AllArgsConstructor
-@NonNull
-//@Builder ??
-
-public class CreateNewChangeLogParam {
+@RequiredArgsConstructor
+public class CreateChangeLogParam {
     private long employeeId;
     private String comment;
     private LocalDate createdAt;
